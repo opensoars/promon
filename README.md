@@ -3,6 +3,8 @@ promon
 
 Monitors a directory and its content for changes and executes specified commands when an update is detected.
 
+[![Dependency Status](https://david-dm.org/opensoars/promon.svg)](https://david-dm.org/opensoars/promon)
+[![devDependency Status](https://david-dm.org/opensoars/promon/dev-status.svg)](https://david-dm.org/opensoars/promon#info=devDependencies)
 
 ---
 
