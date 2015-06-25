@@ -1,0 +1,4 @@
+#!/bin/bash
+script_dir=$(dirname $0)
+node $script_dir/../index.js pwd "$@"
+
