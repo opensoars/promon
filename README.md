@@ -1,4 +1,4 @@
-promon
+promon (wip)
 ======
 
 Monitors a directory and its content for changes and executes specified commands when an update is detected.
@@ -22,7 +22,9 @@ Monitors a directory and its content for changes and executes specified commands
 ## Usage
 
 1. `cd` to the directory you want promon to monitor for you.
-2. `promon command(s) to fire && more_stuff_to_do --debug`
+2. `promon command(s) to fire THEN more_stuff_to_do --debug THEN even more`
+
+Note the command delimiter `THEN` instead of `&&` to chain commands.
 
 
 ## Tests
