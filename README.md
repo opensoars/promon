@@ -16,6 +16,15 @@ Monitors a directory and its content for changes and executes specified commands
 
 
 ## Install
+```
+git clone https://github.com/opensoars/promon.git
+npm install
+```
+Make ./scripts available to your terminal.
+
+### Future install
+`npm install promon -g`
+
 
 
 
