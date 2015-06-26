@@ -24,7 +24,7 @@ npm install
 ```
 Make `/scripts` available to your terminal.
 
-### Future install
+### Future
 `npm install promon -g`
 
 
@@ -39,8 +39,9 @@ Note the command delimiter `THEN` instead of `&&` to chain commands.
 ## Tests
 `npm run local_test`
 
-## Coverage
 
+## Coverage
+`npm run local_test` and open `/coverage/lcov-report/index.html` in your browser.
 
 
 ## Documentation
