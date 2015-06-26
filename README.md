@@ -44,3 +44,4 @@ Note the command delimiter `THEN` instead of `&&` to chain commands.
 
 
 ## Documentation
+`npm run doc` and open `/doc/jsdoc/index.html` in your browser.
