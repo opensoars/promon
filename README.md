@@ -37,8 +37,7 @@ Note the command delimiter `THEN` instead of `&&` to chain commands.
 
 
 ## Tests
-
-
+`npm run local_test`
 
 ## Coverage
 
