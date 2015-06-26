@@ -4,16 +4,16 @@
  */
 var app = {};
 
+/** Bind root require function to application namespace. */
 app.require = require;
+
+/** Utility function that loads key value mapped modules. */
+app.moduleLoader = require('./lib/util/moduleLoader')(app);
 
 /**
  * Application modules namespace.
  * @namespace
  */
-app.modules = require('lib/util/moduleLoader')({
-  Ezlog: 'ezlog'
-});
-
-app.modules = require('lib/util/moduleLoader')(app)({
-
+app.modules = app.moduleLoader({
+  fs: 'fs'
 });
