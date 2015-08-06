@@ -4,7 +4,7 @@ promon (wip)
 Monitors a directory and its content for changes and executes specified commands when an update is detected.
 
 [![Build Status](https://travis-ci.org/opensoars/promon.svg)](https://travis-ci.org/opensoars/promon)
-[![Coverage Status](https://coveralls.io/repos/opensoars/promon/badge.svg)](https://coveralls.io/r/opensoars/promon)
+[![Coverage Status](https://coveralls.io/repos/opensoars/promon/badge.svg?branch=master&service=github)](https://coveralls.io/github/opensoars/promon?branch=master)
 
 [![Inline docs](http://inch-ci.org/github/opensoars/promon.svg?branch=master)](http://inch-ci.org/github/opensoars/promon)
 [![Code Climate](https://codeclimate.com/github/opensoars/promon/badges/gpa.svg)](https://codeclimate.com/github/opensoars/promon)
