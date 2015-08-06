@@ -13,10 +13,10 @@ var ERRS = {
   'app.require fail': 'could not load module, error message below'
 };
 
-describe('Module loader', function (){
+describe('Module loader', function () {
 
-  describe('#requiring the module', function (){
-    it('returns a function', function (){
+  describe('#requiring the module', function () {
+    it('returns a function', function () {
       assert.equal(
         typeof (require('../../lib/util/moduleLoader')),
         'function'
@@ -24,9 +24,9 @@ describe('Module loader', function (){
     });
   });
 
-  describe('#initializing the module', function (){
-    describe('##without an |app| object as arg 1', function (){
-      it('throws ' + ERRS['!app'], function (){
+  describe('#initializing the module', function () {
+    describe('##without an |app| object as arg 1', function () {
+      it('throws ' + ERRS['!app'], function () {
         try {
           require('../../lib/util/moduleLoader')();
         }
@@ -34,8 +34,8 @@ describe('Module loader', function (){
           assert.equal(e.message, ERRS['!app']);
         }
       });
-      describe('##with an |app| object as arg 1, without a require method', function (){
-        it('throws ' + ERRS['!app.require'], function (){
+      describe('##with an |app| object as arg 1, without a require method', function () {
+        it('throws ' + ERRS['!app.require'], function () {
           try {
             require('../../lib/util/moduleLoader')({});
           }
@@ -44,10 +44,10 @@ describe('Module loader', function (){
           }
         });
       });
-      describe('##with an |app| object as arg 1, with a require method', function (){
-        it('returns a function', function (){
+      describe('##with an |app| object as arg 1, with a require method', function () {
+        it('returns a function', function () {
           assert.equal(
-            typeof (require('../../lib/util/moduleLoader')({ require: function (){} })),
+            typeof (require('../../lib/util/moduleLoader')({ require: function () {} })),
             'function'
           );
         });
@@ -55,19 +55,19 @@ describe('Module loader', function (){
     });   
   });
 
-  describe('#calling the initialized module', function (){
-    describe('##without an |modules_map| object', function (){
-      it('throws ' + ERRS['!modules_map'], function (){
+  describe('#calling the initialized module', function () {
+    describe('##without an |modules_map| object', function () {
+      it('throws ' + ERRS['!modules_map'], function () {
         try {
-          require('../../lib/util/moduleLoader')({ require: function (){} })();
+          require('../../lib/util/moduleLoader')({ require: function () {} })();
         }
         catch(e) {
           assert.equal(e.message, ERRS['!modules_map']);
         }
       });
     });
-    describe('##with an |modules_map| object containing existing modules', function (){
-      it('returns an object containing the modules in the passed modules_map', function (){
+    describe('##with an |modules_map| object containing existing modules', function () {
+      it('returns an object containing the modules in the passed modules_map', function () {
         var modules = require('../../lib/util/moduleLoader')({ require: require })({
           fs: 'fs'
         });
@@ -75,8 +75,8 @@ describe('Module loader', function (){
         assert.equal(typeof modules.fs, 'object');
       });
     });
-    describe('##with an |modules_map| object containing non existent modules', function (){
-      it('throws could not load module, error message below', function (){
+    describe('##with an |modules_map| object containing non existent modules', function () {
+      it('throws could not load module, error message below', function () {
         try {
           var t = require('../../lib/util/moduleLoader')({ require: require })({
             fs: 'fss'

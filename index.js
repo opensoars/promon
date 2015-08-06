@@ -4,10 +4,8 @@
  */
 var app = {};
 
-
 /** Application configuration read from config.json */
 app.config = require('./config.json');
-
 
 /**
  * Root require function so we can do things like app.require('ezlog')
@@ -15,14 +13,11 @@ app.config = require('./config.json');
  */
 app.require = require;
 
-
 /** Application root directory. */
 app.__dirname = __dirname;
 
-
 /** Utility module that loads key value mapped modules. */
 app.moduleLoader = require('./lib/util/moduleLoader')(app);
-
 
 /**
  * Application modules namespace.
@@ -31,7 +26,6 @@ app.moduleLoader = require('./lib/util/moduleLoader')(app);
 app.modules = app.moduleLoader({
   fs: 'fs'
 });
-
 
 /**
  * Command line arguments.
@@ -42,7 +36,6 @@ app.modules = app.moduleLoader({
  * 3 (and up): User entered commands
  */
 app.argv = process.argv;
-
 
 /**
  * Clearly mapped command line arguments
