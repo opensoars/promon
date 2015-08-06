@@ -3,11 +3,13 @@ promon (wip)
 
 Monitors a directory and its content for changes and executes specified commands when an update is detected.
 
-
-[![Inline docs](http://inch-ci.org/github/opensoars/promon.svg?branch=master)](http://inch-ci.org/github/opensoars/promon)
 [![Build Status](https://travis-ci.org/opensoars/promon.svg)](https://travis-ci.org/opensoars/promon)
 [![Coverage Status](https://coveralls.io/repos/opensoars/promon/badge.svg)](https://coveralls.io/r/opensoars/promon)
+
+[![Inline docs](http://inch-ci.org/github/opensoars/promon.svg?branch=master)](http://inch-ci.org/github/opensoars/promon)
+[![Code Climate](https://codeclimate.com/github/opensoars/promon/badges/gpa.svg)](https://codeclimate.com/github/opensoars/promon)
 [![Codacy Badge](https://www.codacy.com/project/badge/43b75eba935c472aa266524a770d88c6)](https://www.codacy.com/app/sam_1700/promon)
+
 [![Dependency Status](https://david-dm.org/opensoars/promon.svg)](https://david-dm.org/opensoars/promon)
 [![devDependency Status](https://david-dm.org/opensoars/promon/dev-status.svg)](https://david-dm.org/opensoars/promon#info=devDependencies)
 
