@@ -42,3 +42,9 @@ app.modules = app.moduleLoader({
  * 3 (and up): User entered commands
  */
 app.argv = process.argv;
+
+
+/**
+ * Clearly mapped command line arguments
+ */
+app.cla = require('./lib/mapCla')(app);
