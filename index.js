@@ -9,15 +9,18 @@ var app = {};
 app.config = require('./config.json');
 
 
-/** Bind root require function to application namespace. */
+/**
+ * Root require function so we can do things like app.require('ezlog')
+ * from everywhere in the app instead of require('../../ezlog').
+ */
 app.require = require;
 
 
-/** Bind application root directory to application namespace */
+/** Application root directory. */
 app.__dirname = __dirname;
 
 
-/** Utility function that loads key value mapped modules. */
+/** Utility module that loads key value mapped modules. */
 app.moduleLoader = require('./lib/util/moduleLoader')(app);
 
 
@@ -28,3 +31,14 @@ app.moduleLoader = require('./lib/util/moduleLoader')(app);
 app.modules = app.moduleLoader({
   fs: 'fs'
 });
+
+
+/**
+ * Command line arguments.
+ * Structure:
+ * 0: 'node'
+ * 1: '/promon/index.js'
+ * 2: CD
+ * 3 (and up): User entered commands
+ */
+app.argv = process.argv;
