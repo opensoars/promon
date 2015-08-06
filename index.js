@@ -24,7 +24,8 @@ app.moduleLoader = require('./lib/util/moduleLoader')(app);
  * @namespace
  */
 app.modules = app.moduleLoader({
-  fs: 'fs'
+  fs: 'fs',
+  cp: 'child_process'
 });
 
 /**
