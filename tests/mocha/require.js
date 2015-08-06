@@ -8,7 +8,9 @@ describe('Requiring the root module file (index.js)', function () {
         key;
 
     for (key in required_module) {
-      key_count++;
+      if (required_module.hasOwnProperty(key)) {
+        key_count++;
+      }
     }
 
     assert.equal(key_count, 0);

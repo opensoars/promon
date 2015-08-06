@@ -1,16 +1,16 @@
 var assert = require('assert');
 
 var ERRS = {
-  '!app': 'moduleLoader requires a top level namespace containing' +
+  '!conf': 'moduleLoader requires a config object containing' +
     ' the root require function and standard loggers',
 
-  '!app.require': 'moduleLoader requires the app namespace to have a' +
+  '!conf.require': 'moduleLoader requires the confif object to have a' +
     ' binding to the index.js its require function',
 
   '!modules_map': 'moduleLoader requires an object with modules to load' +
     ' as its first argument',
 
-  'app.require fail': 'could not load module, error message below'
+  'conf.require fail': 'could not load module, error message below'
 };
 
 describe('Module loader', function () {
@@ -25,26 +25,26 @@ describe('Module loader', function () {
   });
 
   describe('#initializing the module', function () {
-    describe('##without an |app| object as arg 1', function () {
-      it('throws ' + ERRS['!app'], function () {
+    describe('##without an |conf| object as arg 1', function () {
+      it('throws ' + ERRS['!conf'], function () {
         try {
           require('../../lib/util/moduleLoader')();
         }
         catch(e) {
-          assert.equal(e.message, ERRS['!app']);
+          assert.equal(e.message, ERRS['!conf']);
         }
       });
-      describe('##with an |app| object as arg 1, without a require method', function () {
-        it('throws ' + ERRS['!app.require'], function () {
+      describe('##with an |conf| object as arg 1, without a require method', function () {
+        it('throws ' + ERRS['!conf.require'], function () {
           try {
             require('../../lib/util/moduleLoader')({});
           }
           catch(e) {
-            assert.equal(e.message, ERRS['!app.require']);
+            assert.equal(e.message, ERRS['!conf.require']);
           }
         });
       });
-      describe('##with an |app| object as arg 1, with a require method', function () {
+      describe('##with an |conf| object as arg 1, with a require method', function () {
         it('returns a function', function () {
           assert.equal(
             typeof (require('../../lib/util/moduleLoader')({ require: function () {} })),
@@ -78,12 +78,12 @@ describe('Module loader', function () {
     describe('##with an |modules_map| object containing non existent modules', function () {
       it('throws could not load module, error message below', function () {
         try {
-          var t = require('../../lib/util/moduleLoader')({ require: require })({
+          require('../../lib/util/moduleLoader')({ require: require })({
             fs: 'fss'
           });
         }
         catch(e) {
-          assert.notEqual(e.message.indexOf(ERRS['app.require fail']), -1);
+          assert.notEqual(e.message.indexOf(ERRS['conf.require fail']), -1);
         }
       });
     });

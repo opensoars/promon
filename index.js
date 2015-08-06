@@ -8,7 +8,7 @@ var app = {};
 app.config = require('./config.json');
 
 /**
- * Root require function so we can do things like app.require('ezlog')
+ * Index.js its require function so we can do things like app.require('ezlog')
  * from everywhere in the app instead of require('../../ezlog').
  */
 app.require = require;
@@ -39,6 +39,10 @@ app.modules = app.moduleLoader({
 app.argv = process.argv;
 
 /**
- * Clearly mapped command line arguments.
+ * Clearly mapped 'command line arguments'.
  */
-app.cla = require('./lib/mapCla')(app);
+app.cla = require('./lib/mapCla')({
+  argv: app.argv
+});
+
+app.monitor = require('./lib/monitor');
