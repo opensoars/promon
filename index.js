@@ -32,12 +32,12 @@ app.modules = app.moduleLoader({
  * Structure:
  * 0: 'node'
  * 1: '/promon/index.js'
- * 2: CD
+ * 2: CD (where promon is called from)
  * 3 (and up): User entered commands
  */
 app.argv = process.argv;
 
 /**
- * Clearly mapped command line arguments
+ * Clearly mapped command line arguments.
  */
 app.cla = require('./lib/mapCla')(app);
