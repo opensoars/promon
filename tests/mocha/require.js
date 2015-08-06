@@ -1,7 +1,7 @@
 var assert = require('assert');
 
-describe('Requiring the module', function (){
-  it('returns an empty object since its an command line tool', function (){
+describe('Requiring the root module file (index.js)', function (){
+  it('returns an empty object since its a command line tool', function (){
     var required_module = require('../../index.js');
 
     var key_count = 0,
