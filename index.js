@@ -45,4 +45,7 @@ app.cla = require('./lib/mapCla')({
   argv: app.argv
 });
 
-app.monitor = require('./lib/monitor');
+app.monitor = require('./lib/monitor')({
+  cla: app.cla,
+  require: app.require
+});
