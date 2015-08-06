@@ -37,15 +37,20 @@ describe('mapCla', function () {
     });
     describe('##with an |app| object containing an argv property', function () {
       it('maps using the following structure: cd: argv[2], custom_commands: argv[3(and up)]', function () {
-        var mapped_commands = require('../../lib/mapCla')([
-          'will be cd',
-          'custom_commands_1',
-          'custom_commands_2'
-        ]);
+        var mapped_commands = require('../../lib/mapCla')({
+          argv: [
+            'not mapped',
+            'not mapped',
+            'will be cd',
+            'custom_commands_0',
+            'custom_commands_1'
+          ]
+        });
 
         assert.equal(mapped_commands.cd, 'will be cd');
 
-        console.log(mapped_commands);
+        assert.equal(mapped_commands.custom_commands[0], 'custom_commands_0');
+        assert.equal(mapped_commands.custom_commands[1], 'custom_commands_1');
       })
     });
 
