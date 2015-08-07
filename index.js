@@ -17,7 +17,9 @@ app.require = require;
 app.__dirname = __dirname;
 
 /** Utility module that loads key value mapped modules. */
-app.moduleLoader = require('./lib/util/moduleLoader')(app);
+app.moduleLoader = require('./lib/util/moduleLoader')({
+  require: app.require
+});
 
 /**
  * Application modules namespace.
